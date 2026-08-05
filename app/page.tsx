@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 import {
   TrendingUp,
@@ -112,13 +113,18 @@ function Navbar() {
     <header className="w-full bg-white sticky top-0 z-50 border-b border-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-24">
         {/* Logo */}
-        {/* <img
-          src="/logo.png"
-          className="relative w-[420px] h-[520px] object-cover rounded-[40px]"
-        /> */}
-        <a href="#" className="flex items-center gap-1 text-2xl font-extrabold">
+        {/* <a href="#" className="flex items-center gap-1 text-2xl font-extrabold">
           <span className="text-orange-500">Epixe</span>
           <span className="text-[#0B1B35]">lab</span>
+        </a> */}
+        <a href="#" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Epixelab Logo"
+            width={150}
+            height={50}
+            className="h-12 w-auto"
+          />
         </a>
 
         {/* Desktop nav */}
@@ -201,7 +207,7 @@ function Hero() {
       {/* Left: copy */}
       <div>
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-[1.1] text-[#0B1B35] mb-8">
-          We boost growth for your statup business
+          We boost growth for your startup business
         </h1>
         <p className="text-lg sm:text-xl text-gray-800 mb-10 max-w-md">
           Our goal is top at the heart of creativity services industry as a
@@ -294,7 +300,7 @@ function ServiceCard({ icon: Icon, title, copy }) {
 function Services() {
   return (
     <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
-      <SectionHeading eyebrow="Service" title="Our Vison & Our Goal" />
+      <SectionHeading eyebrow="Service" title="Our Vision & Our Goal" />
       <div className="grid md:grid-cols-3 gap-8">
         {SERVICES.map((s) => (
           <ServiceCard key={s.title} {...s} />
@@ -369,7 +375,10 @@ function TestimonialCard({ quote, name, img }) {
 function Testimonials() {
   return (
     <section className="max-w-6xl mx-auto px-6 lg:px-10 py-20">
-      <SectionHeading eyebrow="Testmonials" title="What Clients say about us" />
+      <SectionHeading
+        eyebrow="Testimonials"
+        title="What Clients say about us"
+      />
       <div className="grid md:grid-cols-2 gap-8">
         {TESTIMONIALS.map((t) => (
           <TestimonialCard key={t.name} {...t} />
@@ -440,7 +449,7 @@ function Newsletter() {
         Our Team
       </p>
       <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0B1B35] text-center mb-14">
-        Subscribe Our Newsleter
+        Subscribe Our Newsletter
       </h2>
 
       <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -487,11 +496,15 @@ function Footer() {
   return (
     <footer className="border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-        <a href="#" className="flex items-center gap-1 text-lg font-extrabold">
-          <span className="text-orange-500">Epixe</span>
-          <span className="text-[#0B1B35]">lab</span>
+        <a href="#" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Epixelab Logo"
+            width={130}
+            height={40}
+            className="h-10 w-auto"
+          />
         </a>
-
         <p className="text-sm text-gray-400 order-3 sm:order-2">
           © 2020 Epixelab. All rights reserved.
         </p>
